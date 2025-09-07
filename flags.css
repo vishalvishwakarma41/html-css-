@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  gap: 20px;
+  margin: 20px;
+}
+
+.name {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.flag {
+  width: 180px;
+  height: 120px;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---------- India ---------- */
+.india .orange {
+  background: orange;
+  height: 33.3%;
+}
+.india .white {
+  background: white;
+  height: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.india .white img {
+  height: 95%;
+}
+.india .green {
+  background: green;
+  height: 33.3%;
+}
+
+/* ---------- France ---------- */
+.france {
+  flex-direction: row;
+}
+.france .blue {
+  background: blue;
+  width: 33.3%;
+}
+.france .white {
+  background: white;
+  width: 33.3%;
+}
+.france .red {
+  background: red;
+  width: 33.3%;
+}
+
+/* ---------- Germany ---------- */
+.germany .black {
+  background: black;
+  height: 33.3%;
+}
+.germany .red {
+  background: red;
+  height: 33.3%;
+}
+.germany .yellow {
+  background: yellow;
+  height: 33.3%;
+}
+
+/* ---------- Japan ---------- */
+.japan {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.japan div {
+  width: 60px;
+  height: 60px;
+  background: red;
+  border-radius: 50%;
+}
+
+/* ---------- USA ---------- */
+.usa {
+  position: relative;
+}
+.usa .stripes {
+  background: repeating-linear-gradient(
+    to bottom,
+    red,
+    red 9%,
+    white 9%,
+    white 18%
+  );
+  width: 100%;
+  height: 100%;
+}
+.usa .bluebox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 45%;
+  background: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.usa .bluebox img {
+  width: 90%;
+  height: auto;
+}
+
+/* ---------- China ---------- */
+.china {
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.china img {
+  width: 60%;
+  height: auto;
+}
+
+/* ---------- Canada ---------- */
+.canada {
+  flex-direction: row;
+}
+.canada .red {
+  background: red;
+  width: 25%;
+}
+.canada .white {
+  background: white;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.canada .white img {
+  height: 80%;
+}
+
+/* ---------- Cyprus ---------- */
+.cyprus {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cyprus img {
+  width: 80%;
+  height: auto;
+}

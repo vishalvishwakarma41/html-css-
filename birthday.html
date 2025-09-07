@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎉 Happy Birthday!</title>
+  <!--
+    ✅ दोनों (HTML + CSS) एक ही फाइल में हैं
+    ▶ नाम बदलना है तो नीचे JS में NAME वैरिएबल बदल दें
+    const NAME = "Yahan-Naam";
+  -->
+  <style>
+    :root{
+      --bg1:#0f172a;   /* slate-900 */
+      --bg2:#1e293b;   /* slate-800 */
+      --card:#111827cc;/* semi-translucent */
+      --txt:#e5e7eb;   /* text */
+      --accent:#f472b6;/* pink */
+      --glow:#a78bfa;  /* violet */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--txt);
+      background: radial-gradient(1200px 800px at 10% 10%, #111827 0%, var(--bg1) 40%, var(--bg2) 100%);
+      overflow:hidden;
+    }
+    .container{
+      position:relative; height:100%; width:100%; display:grid; place-items:center; padding:24px;
+    }
+    .card{
+      width:min(860px, 92vw);
+      background:linear-gradient(180deg, #0b1222cc, var(--card));
+      border:1px solid #334155;
+      border-radius:24px;
+      box-shadow:0 10px 40px #0008, 0 0 80px 0 var(--glow);
+      padding:28px 28px 24px;
+      backdrop-filter: blur(6px);
+      position:relative;
+      overflow:hidden;
+    }
+    .shine{
+      position:absolute; inset:-1px; pointer-events:none;
+      background: radial-gradient(650px 120px at 20% -10%, #ffffff33, transparent 50%),
+                  radial-gradient(850px 150px at 120% 0%, #a78bfa22, transparent 50%);
+      mix-blend-mode:screen;
+    }
+    h1{
+      margin:10px 0 8px; font-size: clamp(28px, 6vw, 64px); line-height:1.05;
+      text-align:center; letter-spacing:0.5px;
+      text-shadow:0 2px 10px #000a;
+    }
+    .name{ color:#f9a8d4; text-shadow:0 0 14px #f9a8d4aa, 0 0 34px #a78bfa88; }
+    .sub{ text-align:center; opacity:.9; margin-bottom:18px; font-size:clamp(14px, 2.2vw, 18px); }
+    .msg{
+      margin:18px auto 0; max-width:60ch; text-align:center; font-size:clamp(14px,2.2vw,18px);
+      line-height:1.6; opacity:.95;
+    }
+    .ribbon{
+      position:absolute; inset:auto -40px -12px auto; transform:rotate(-2deg);
+      background:linear-gradient(90deg, #22d3ee, #a78bfa, #f472b6, #f59e0b);
+      height:10px; border-radius:999px; filter:saturate(110%) blur(.2px);
+    }
+    /* 🎈 Balloons */
+    .balloon{ position:absolute; bottom:-20vh; width:60px; height:80px; border-radius:50% 50% 45% 45%; opacity:.9; }
+    .balloon:after{ content:""; position:absolute; bottom:-16px; left:50%; width:2px; height:70px; background:#e5e7eb44; transform:translateX(-50%); }
+    .b1{ left:8%; background:#60a5fa; animation:float 9s ease-in infinite; }
+    .b2{ left:22%; background:#f472b6; animation:float 11s ease-in infinite 1s; }
+    .b3{ left:48%; background:#34d399; animation:float 10s ease-in infinite .5s; }
+    .b4{ left:72%; background:#f59e0b; animation:float 12s ease-in infinite .2s; }
+    .b5{ left:90%; background:#a78bfa; animation:float 13s ease-in infinite 1.2s; }
+    @keyframes float{ 0%{ transform:translateY(0) scale(1);} 100%{ transform:translateY(-120vh) scale(1.04);} }
+
+    /* ✨ Confetti */
+    .confetti{ position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+    .confetti i{ position:absolute; top:-10px; width:6px; height:10px; background:linear-gradient(#fff,#ddd); opacity:.85; transform:rotate(15deg); animation:drop var(--t) linear infinite; }
+    @keyframes drop{ to{ transform:translateY(110vh) rotate(360deg);} }
+
+    /* 🔘 Button */
+    .btn{ display:inline-block; margin:20px auto 4px; padding:12px 18px; border-radius:14px; border:1px solid #334155; background:#0b1222; color:var(--txt); cursor:pointer; font-weight:600; box-shadow:0 6px 16px #0006; }
+    .btn:hover{ filter: brightness(1.1); }
+    .hint{ text-align:center; font-size:12px; opacity:.7; }
+
+  
+    @media (max-width:420px){ .card{ padding:22px 18px; } .btn{ width:100%; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 🎈 Animated balloons -->
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+    <div class="balloon b5"></div>
+
+    <div class="card">
+      <div class="shine"></div>
+      <h1>🎉 Happy Birthday, <span id="name" class="name">Friend</span>!</h1>
+      <p class="sub">आपका दिन ढेर सारी खुशियों, प्यार और सरप्राइज़ से भरा रहे! 🥳</p>
+      <p class="msg">
+        May your year sparkle with good health, success, and endless smiles. Keep shining and keep inspiring everyone around you!
+      </p>
+      <div style="text-align:center">
+        <button class="btn" id="play">Play Birthday Tune ♪</button>
+        <!-- <div class="hint">(अगर म्यूज़िक न बजे तो ब्राउज़र की ऑडियो परमिशन दें)</div> -->
+      </div>
+      <div class="ribbon"></div>
+      <div class="confetti" id="confetti"></div>
+    </div>
+  </div>
+
+  <script>
+    // 👉 यहाँ नाम बदलें
+    const NAME = "my"; // उदाहरण: "Vishal"
+    document.getElementById("name").textContent = NAME;
+
+    // 🎊 हल्का सा कॉन्फेटी (vanilla JS)
+    const confetti = document.getElementById('confetti');
+    const pieces = 80; // कॉन्फेटी की संख्या
+    for(let i=0;i<pieces;i++){
+      const el = document.createElement('i');
+      const left = Math.random()*100;
+      const delay = Math.random()*-8; // शुरू से कुछ ऊपर
+      const dur = 7 + Math.random()*6;
+      el.style.left = left + 'vw';
+      el.style.animationDelay = delay + 's';
+      el.style.setProperty('--t', dur + 's');
+      // अलग-अलग रंग
+      const colors = ['#fde047','#f472b6','#60a5fa','#34d399','#f59e0b','#a78bfa'];
+      el.style.background = colors[i % colors.length];
+      el.style.width = (4 + Math.random()*6) + 'px';
+      el.style.height = (6 + Math.random()*10) + 'px';
+      confetti.appendChild(el);
+    }
+
+    // ♪ छोटा सा ट्यून (WebAudio) — कोई फाइल नहीं, सब JS से
+    const btn = document.getElementById('play');
+    let started = false;
+    btn.addEventListener('click', () => {
+      if(started) return; started = true;
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const bpm = 110;
+      const melody = [
+        { n:440, d:1 },{ n:494, d:1 },{ n:523, d:2 }, // A B C
+        { n:440, d:1 },{ n:587, d:1 },{ n:659, d:2 }, // A D E
+        { n:659, d:1 },{ n:587, d:1 },{ n:523, d:2 }, // E D C
+        { n:494, d:1 },{ n:523, d:1 },{ n:440, d:2 }, // B C A
+      ];
+      let t = ctx.currentTime;
+      const beat = 60/bpm;
+      melody.forEach(({n,d})=>{
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.type = 'sine';
+        o.frequency.value = n;
+        o.connect(g); g.connect(ctx.destination);
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.exponentialRampToValueAtTime(0.2, t+0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + beat*d);
+        o.start(t); o.stop(t + beat*d + 0.02);
+        t += beat*d*1.05;
+      });
+      btn.textContent = 'Playing... Enjoy!';
+      setTimeout(()=> btn.textContent = 'Replay (refresh page)', 4000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+  /* text-transform: uppercase; */
+  font-family: sans-serif;
+}
+
+.content{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg{
+    height: 250px;
+    width: 425px;
+    border-radius: 12px;
+    border-radius : solid black;
+    position: relative;
+    background-color: #95CAF6;
+}
+.b1{
+    height: 123px;
+    width: 79px;
+    background-color: #95caf6c8;
+    border-radius: 50%;
+    box-shadow: 90px 90px 90px rgba(245, 182, 186, 0.866)
+}
+.top{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 12px;
+}
+.t1{
+    font-weight: 700;
+    position: absolute;
+    left: 17px;
+    text-align: center;
+}
+.t3{
+    font-weight: 700;
+    text-align: center;
+}
+.t2 img{
+    height: 43px;
+    position: absolute;
+    top: -2px;
+    left: 249px;
+}
+.t3{
+    position: absolute;
+    /* top: px; */
+    left: 296px;
+}
+.mid{
+    width: 100%;
+
+}
+.pr{
+    position: absolute;
+    left: 7px;
+    top: 62px;
+}
+.pr img{
+    height: 79px;
+
+}
+.p1{
+    font-size: small;
+    font-weight: 700;
+    color: #180ede;
+    position: absolute;
+    text-align: center;
+    left: 103px;
+    top: 67px;
+}
+.scan{
+
+    height: 60px;
+    width: 60px;
+}
+.scan img{
+    height: 83px;
+    top: 63px;
+    left: 329px;
+    position: absolute;
+}
+.nm{
+    font-size: 11px;
+    color: #180ede;
+    position: absolute;
+    left: 8px;
+    top: 138px;
+}
+.fam{
+    font-size: 11px;
+    color: #180ede;
+    position: absolute;
+    left: 8px;
+    top: 168px;
+}
+.mname{
+    color: #0d0d0d;
+    font-size: 12px;   
+}
+.dob{
+    font-size: 11px;
+    color: #180ede;
+    position: absolute;
+    left: 8px;
+    top: 201px;
+}
+.sign{
+    font-family:cursive;
+    top: 197px;
+    left: 155px;
+    text-align: center;
+    position: absolute;
+}
+.sinature .acname{
+    color: #180ede;
+}
+.id{
+    position: absolute;
+    left: 146px;
+    top: 113px;
+    font-weight: 700;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
